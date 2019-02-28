@@ -1,5 +1,5 @@
 .three_row {
-    height: calc( 100vh / 3);
+    height: 100vh;
     background-size: cover;
     background-position: center;
 }
