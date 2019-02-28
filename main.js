@@ -9,7 +9,7 @@
             onContentLoad = onContentLoad.bind( this );
             onIntersect   = onIntersect.bind( this );
             initIO();
-            document.addEventListener( 'DOMContentLoaded', onContentLoad.bind( this ) );
+            document.addEventListener( 'DOMContentLoaded', onContentLoad );
         };
 
         var onContentLoad = function() {
