@@ -5,12 +5,7 @@
         var init = function() {
 
             onContentLoad = onContentLoad.bind( this );
-            
-            if ( 'loading' !== document.readyState ) {
-                onContentLoad();
-            } else {
-                document.addEventListener( 'DOMContentLoaded', onContentLoad.bind( this ) );
-            }
+            document.addEventListener( 'DOMContentLoaded', onContentLoad.bind( this ) );
         };
 
         var onContentLoad = function() {
