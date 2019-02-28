@@ -1,0 +1,23 @@
+.three_row {
+    height: calc( 100vh / 3);
+    background-size: cover;
+    background-position: center;
+}
+
+.three_row--img-bird {
+
+    background-image: url( './assets/image/birds-cold-conifer.jpg' ); 
+}
+
+.three_row--img-forest {
+    background-image: url( './assets/image/forest-haze.jpg' ); 
+}
+
+.three_row--agricultural-cropland {
+    background-image: url( './assets/image/agricultural-cropland.jpg' ); 
+}
+
+.three_row--lazy-bg {
+    background-image: -webkit-gradient(linear,left top,left bottom,from(transparent),to(rgba(0,0,0,.7)));
+    background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.7));
+}
