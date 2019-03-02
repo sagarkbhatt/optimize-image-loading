@@ -4,10 +4,11 @@
     margin: 0 auto;
 }
 
-.three_row {
+figure {
     height: 100vh;
     width: 100%;
     margin: 0;
+    position: relative;
 }
 
 figure > img {
@@ -15,7 +16,6 @@ figure > img {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    position: relative;
 }
 
 figure > figcaption {
