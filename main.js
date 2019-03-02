@@ -83,7 +83,7 @@
 
                     // Stop watching and load the image
                     observer.unobserve(entries[j].target);
-                    var imgSrc = entries[j].target.dataset.lazyBgImg;
+                    var imgSrc = entries[j].target.dataset.src;
                     preLoadImage(entries[j].target, imgSrc);
                 }
 
@@ -107,5 +107,5 @@
         };
     }
 
-    window.lazyLoadImg  = new lazyLoadImg();
+    window.lazyLoadImg = new lazyLoadImg();
 } () );
