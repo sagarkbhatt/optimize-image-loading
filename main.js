@@ -107,6 +107,5 @@
         };
     }
 
-    var instance = new lazyLoadImg();
-    window.lazyLoadImg = instance;
+    window.lazyLoadImg  = new lazyLoadImg();
 } () );
