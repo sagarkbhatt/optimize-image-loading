@@ -1,5 +1,11 @@
+.content {
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
 .three_row {
-    height: 100vh;
+    height: 500px;
     width: 100%;
     margin: 0;
 }
