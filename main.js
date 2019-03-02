@@ -34,7 +34,7 @@
             onContentLoad = onContentLoad.bind( this );
             onIntersect   = onIntersect.bind( this );
             initIO();
-            document.addEventListener( 'DOMContentLoaded', onContentLoad.bind( this ) );
+            document.addEventListener( 'DOMContentLoaded', onContentLoad );
         };
 
         /**
@@ -107,6 +107,12 @@
         };
     }
 
+<<<<<<< HEAD
     var instance = new lazyLoadImg();
     window.lazyLoadImg = instance;
 } () );
+=======
+    var instance = new lazyLoadBgImg();
+    instance.init();
+} () )
+>>>>>>> 355c9b540b1da8016559c5d3b74299d38120a8ec
