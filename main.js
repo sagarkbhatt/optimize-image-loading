@@ -10,7 +10,7 @@
             threshold: [ 0.2 ]
         };
 
-        var elmsSelector = '[data-lazy-bg-img]';
+        var elmsSelector = 'img[data-src]';
         
         /**
          * Initialize Lazy Loading
