@@ -3,14 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Optimize Image Loading</title>
+    <title>Lazy Image Loading - Pure JS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./normalize.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./main.css">
 </head>
 <body>
-    <div class="three_row three_row--img-bird"></div>
-    <div class="three_row three_row--img-forest"></div>
-    <div class="three_row three_row--agricultural-cropland"></div>
+    <figure class="three_row">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+            width="500px" height="500px" alt="birds-cold-conifer" 
+            data-src="./assets/image/birds-cold-conifer.jpg"
+        />
+        <figcaption>CREDIT: https://images.pexels.com/</figcaption>
+    </figure>
+    <figure class="three_row">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+            width="500px" height="500px" alt="forest-haze" 
+            data-src="./assets/image/forest-haze.jpg"
+        />
+        <figcaption>CREDIT: https://images.pexels.com/</figcaption>
+    </figure>
+    <figure class="three_row">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+        width="500px" height="500px" alt="agricultural-cropland" 
+        data-src="./assets/image/forest-haze.jpg"
+        />
+        <figcaption>CREDIT: https://images.pexels.com/</figcaption>
+    </figure>
+    <script src="./main.js" ></script>
 </body>
 </html>

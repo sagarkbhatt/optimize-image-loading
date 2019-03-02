@@ -1,10 +1,35 @@
 ( function () {
 
-    var lazyLoadBgImg = function() {
+    var lazyLoadImg = function() {
 
         var observer = null;
+
+        var ioConfig = {
+            root: null,
+            rootMargin: '150px 0px 0px 0px',
+            threshold: [ 0.2 ]
+        };
+
+        var elmsSelector = '[data-lazy-bg-img]';
         
-        var init = function() {
+        /**
+         * Initialize Lazy Loading
+         * 
+         * @param {Object} config 
+         */
+        var init = function( config ) {
+
+            if ( 'undefined' === typeof config ) {
+                config = {};
+            }
+            
+            if ( config.selector ) {
+                selector = config.selector;
+            }
+
+            if ( config.ioConfig ) {
+                ioConfig = mergeObj( ioConfig, config.ioConfig );
+            }
 
             onContentLoad = onContentLoad.bind( this );
             onIntersect   = onIntersect.bind( this );
@@ -12,10 +37,32 @@
             document.addEventListener( 'DOMContentLoaded', onContentLoad.bind( this ) );
         };
 
+        /**
+         * Merge object
+         * 
+         * @param {Object} obj1 Default object.
+         * @param {Object} obj2 User given object.
+         * 
+         * @returns {Object}
+         */
+        var mergeObj = function( obj1, obj2 ) {
+            
+            var keys = Object.keys( obj2 );
+
+            for ( var l = 0; l < keys.length; l++ ) {
+
+                if ( keys[l] in obj2 ) {
+
+                    obj1[ keys[l] ] = obj2[ keys[l] ];
+                }
+            }
+
+            return obj1;
+        }
+
         var onContentLoad = function() {
 
-            var selector = '[data-lazy-bg-img]'
-            var elms = document.querySelectorAll( selector );
+            var elms = document.querySelectorAll( elmsSelector );
 
             for( var i = 0; i < elms.length; i++ ) {
 
@@ -24,14 +71,8 @@
         }
 
         var initIO = function() {
-
-            var options = {
-                root: null,
-                rootMargin: '150px 0px 0px 0px',
-                threshold: [ 0.2 ]
-            };
     
-            observer = new IntersectionObserver( onIntersect, options );
+            observer = new IntersectionObserver( onIntersect, ioConfig );
         }
 
         var onIntersect = function( entries ) {
@@ -55,7 +96,7 @@
 
             img.onload = function() {
     
-                imgElm.style.backgroundImage = 'url(' + img.src + ')';
+                imgElm.src = img.src;
             }
 
             img.src = imgSrc;
@@ -66,6 +107,6 @@
         };
     }
 
-    var instance = new lazyLoadBgImg();
-    instance.init();
-} () )
+    var instance = new lazyLoadImg();
+    window.lazyLoadImg = instance;
+} () );
