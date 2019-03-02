@@ -34,7 +34,12 @@
             onContentLoad = onContentLoad.bind( this );
             onIntersect   = onIntersect.bind( this );
             initIO();
-            document.addEventListener( 'DOMContentLoaded', onContentLoad );
+
+            if ( 'loading' === document.readyState ) {
+                document.addEventListener( 'DOMContentLoaded', onContentLoad );
+            } else {
+                onContentLoad();
+            }
         };
 
         /**
