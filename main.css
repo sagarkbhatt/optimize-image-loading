@@ -14,8 +14,8 @@ figure > img {
 
 figure > figcaption {
     position: absolute;
-    bottom: 10;
-    left: 10;
+    bottom: 10px;
+    left: 10px;
     color: gray;
     font-size: 14px; 
 }
